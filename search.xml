@@ -2,11 +2,11 @@
 <search>
   <entry>
     <title>jQuery对表单的操作及更多应用</title>
-    <url>./2017/05/26/houduan/test1/</url>
+    <url>/2017/05/26/hello-world/</url>
     <content><![CDATA[<p>12121ee</p>
 ]]></content>
       <categories>
-        <category>web前端</category>
+        <category>web前端2</category>
       </categories>
       <tags>
         <tag>jQuery</tag>
@@ -16,11 +16,11 @@
   </entry>
   <entry>
     <title>jQuery对表单的操作及更多应用</title>
-    <url>./2017/05/26/hello-world/</url>
+    <url>/2017/05/26/houduan/test1/</url>
     <content><![CDATA[<p>12121ee</p>
 ]]></content>
       <categories>
-        <category>web前端2</category>
+        <category>web前端</category>
       </categories>
       <tags>
         <tag>jQuery</tag>

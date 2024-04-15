@@ -103,5 +103,5 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://gitee.com/zly2022/beichen-doc.git
-  branch: master
+  repo: https://github.com/zbeichen/zbeichen.github.io.git
+  branch: main

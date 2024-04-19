@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>jQuery对表单的操作及更多应用</title>
-    <url>/2024/04/20/houduan/JDK8%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <title>JDK8新特性</title>
+    <url>/2024/04/20/java/JDK8%E6%96%B0%E7%89%B9%E6%80%A7/</url>
     <content><![CDATA[<p><a href="https://blog.csdn.net/LXYDSF/article/details/125919046">JDK8新特性详解_爱编程的大李子的博客-CSDN博客_jdk8新特性有哪些</a></p>
 <h2 id="一、Lambada表达式"><a href="#一、Lambada表达式" class="headerlink" title="一、Lambada表达式"></a>一、Lambada表达式</h2><h3 id="1、基础知识"><a href="#1、基础知识" class="headerlink" title="1、基础知识"></a>1、基础知识</h3><p><strong>函数式接口：</strong>只有一个抽象方法的接口称为函数式接口,可以通过注解**@FunctionalInterface**控制</p>
 <p><strong>Lambada表达式只能对函数式接口进行实现</strong></p>
@@ -60,7 +60,7 @@
 
 
 
-<h4 id="2-1常用中间方法"><a href="#2-1常用中间方法" class="headerlink" title="2.1常用中间方法"></a>2.1常用中间方法</h4><p><img src="/1.8JDK8.assets/image-20230604172910799.png" alt="image-20230604172910799"></p>
+<h4 id="2-1常用中间方法"><a href="#2-1常用中间方法" class="headerlink" title="2.1常用中间方法"></a>2.1常用中间方法</h4><p><img src="https://cdn.jsdelivr.net/gh/zbeichen/PicGo/image-20240420021506627.png" alt="image-20240420021506627"></p>
 <h5 id="2-1-1-filter"><a href="#2-1-1-filter" class="headerlink" title="2.1.1 filter"></a>2.1.1 filter</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StreamDemo</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 过滤</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">filter</span><span class="params">()</span> &#123;</span><br><span class="line">        List&lt;Student&gt; studentList = getStudentList();</span><br><span class="line">        studentList.stream()</span><br><span class="line">                .filter(item -&gt; item.getName().startsWith(<span class="string">&quot;张&quot;</span>))</span><br><span class="line">                .forEach(System.out::println);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="2-1-2-limit"><a href="#2-1-2-limit" class="headerlink" title="2.1.2 limit"></a>2.1.2 limit</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StreamDemo</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取前n个元素</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">limit</span><span class="params">()</span> &#123;</span><br><span class="line">        List&lt;Student&gt; studentList = getStudentList();</span><br><span class="line">        studentList.stream()</span><br><span class="line">                .limit(<span class="number">3</span>)</span><br><span class="line">                .forEach(System.out::println);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -82,10 +82,8 @@
 
 
 
-
-
-<h4 id="2-3常用终结方法"><a href="#2-3常用终结方法" class="headerlink" title="2.3常用终结方法"></a>2.3常用终结方法</h4><p><img src="/1.8JDK8.assets/image-20231119003014720.png" alt="image-20231119003014720"></p>
-<h5 id="2-3-1-forEach、forEachOrdered"><a href="#2-3-1-forEach、forEachOrdered" class="headerlink" title="2.3.1 forEach、forEachOrdered"></a>2.3.1 forEach、forEachOrdered</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StreamDemo</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 遍历</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">forEach</span><span class="params">()</span> &#123;</span><br><span class="line">        List&lt;Student&gt; studentList = getStudentList();</span><br><span class="line">        <span class="comment">// forEach在并行流（parallel stream）中顺序随机，而forEachOrdered会保证顺序</span></span><br><span class="line">        studentList.stream().forEach(System.out::println);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-3常用终结方法"><a href="#2-3常用终结方法" class="headerlink" title="2.3常用终结方法"></a>2.3常用终结方法</h4><p><img src="https://cdn.jsdelivr.net/gh/zbeichen/PicGo/image-20240420021650807.png" alt="image-20240420021650807"></p>
+<h5 id="2-3-1-forEach"><a href="#2-3-1-forEach" class="headerlink" title="2.3.1 forEach"></a>2.3.1 forEach</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StreamDemo</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 遍历</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">forEach</span><span class="params">()</span> &#123;</span><br><span class="line">        List&lt;Student&gt; studentList = getStudentList();</span><br><span class="line">        <span class="comment">// forEach在并行流（parallel stream）中顺序随机，而forEachOrdered会保证顺序</span></span><br><span class="line">        studentList.stream().forEach(System.out::println);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="2-3-2-count"><a href="#2-3-2-count" class="headerlink" title="2.3.2 count"></a>2.3.2 count</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StreamDemo</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 统计</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">count</span><span class="params">()</span> &#123;</span><br><span class="line">        List&lt;Student&gt; studentList = getStudentList();</span><br><span class="line">        <span class="type">long</span> <span class="variable">count</span> <span class="operator">=</span> studentList.stream().count();</span><br><span class="line">        System.out.println(count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -190,25 +188,11 @@
 ]]></content>
       <categories>
         <category>java</category>
+        <category>JDK8新特性</category>
       </categories>
       <tags>
         <tag>JDK8新特性</tag>
         <tag>Stream流</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>jQuery对表单的操作及更多应用</title>
-    <url>/2017/05/26/houduan/test1/</url>
-    <content><![CDATA[<p>测试</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zbeichen/PicGo/image-20240419231652794.png" alt="image-20240419231652794"></p>
-]]></content>
-      <categories>
-        <category>web前端</category>
-      </categories>
-      <tags>
-        <tag>jQuery</tag>
-        <tag>表格</tag>
-        <tag>表单</tag>
       </tags>
   </entry>
 </search>
